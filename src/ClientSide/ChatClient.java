@@ -1,4 +1,4 @@
-
+package ClientSide;
 /*
  * Author: Vallath Nandakumar and EE 422C instructors
  * Date: April 20, 2020
@@ -6,18 +6,28 @@
  * It doesn't compile.
  */
 
-public class ChatClient extends Application { 
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.layout.BorderPane;
+import javafx.stage.Stage;
+
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.net.Socket;
+
+public class ChatClient extends Application {
 	// I/O streams 
-	ObjectOutputStream toServer = null; 
+	ObjectOutputStream toServer = null;
 	ObjectInputStream fromServer = null;
 
 
 	@Override
-	public void start(Stage primaryStage) { 
-		BorderPane mainPane = new BorderPane(); 
+	public void start(Stage primaryStage) {
+		BorderPane mainPane = new BorderPane();
 
 		// Create a scene and place it in the stage 
-		Scene scene = new Scene(mainPane, 450, 200); 
+		Scene scene = new Scene(mainPane, 450, 200);
 		primaryStage.setTitle("Client"); // Set the stage title 
 		primaryStage.setScene(scene); // Place the scene in the stage 
 		primaryStage.show(); // Display the stage 
@@ -28,7 +38,7 @@ public class ChatClient extends Application {
 		try { 
 			// Create a socket to connect to the server 
 			@SuppressWarnings("resource")
-			Socket socket = new Socket("localhost", 8000); 
+			Socket socket = new Socket("localhost", 8000);
 
 			// Create an input stream to receive data from the server 
 			fromServer = new ObjectInputStream(socket.getInputStream()); 
@@ -36,7 +46,7 @@ public class ChatClient extends Application {
 			// Create an output stream to send data to the server 
 			toServer = new ObjectOutputStream(socket.getOutputStream()); 
 		} 
-		catch (IOException ex) { 
+		catch (IOException ex) {
 		}
 	}
 	

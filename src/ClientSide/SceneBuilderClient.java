@@ -1,3 +1,14 @@
+package ClientSide;
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.net.Socket;
+
 /*
  * Author: Vallath Nandakumar and the EE 422C Instructors
  * Date: April 20, 2020

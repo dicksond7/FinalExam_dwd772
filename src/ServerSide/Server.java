@@ -1,3 +1,12 @@
+package ServerSide;
+
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.util.Observable;
+import java.util.Observer;
+
 /*
  * Author: Vallath Nandakumar and the EE 422C instructors.
  * Data: April 20, 2020
@@ -22,7 +31,7 @@ public class Server extends Observable {
             ServerSocket ss = new ServerSocket(port);
             while (true) {
                 Socket clientSocket = ss.accept();
-                ClientObserver writer = new ClientObserver(clientSocket.getOutputStream());
+                Observer writer = new ClientObserver(clientSocket.getOutputStream());
                 Thread t = new Thread(new ClientHandler(clientSocket, writer));
                 t.start();
                 addObserver(writer);
@@ -32,16 +41,16 @@ public class Server extends Observable {
     }
 
     class ClientHandler implements Runnable {
-        private  ObjectInputStream reader;
+        private ObjectInputStream reader;
         private  ClientObserver writer; // See Canvas. Extends ObjectOutputStream, implements Observer
         Socket clientSocket;
 
         public ClientHandler(Socket clientSocket, ClientObserver writer) {
-			...
+
         }
 
         public void run() {
-			...
+
         }
     } // end of class ClientHandler
 }
