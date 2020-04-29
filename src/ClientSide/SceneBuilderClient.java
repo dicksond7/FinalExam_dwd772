@@ -5,6 +5,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
@@ -14,9 +15,9 @@ import java.net.Socket;
  * Date: April 20, 2020
  * This code is for starting  out your JavaFX application from SceneBuilder. It doesn't compile.
  */
-public class Client extends Application {
+public class SceneBuilderClient extends Application {
 
-    ClientController controller;
+    //ClientController controller;
     ObjectInputStream reader;
     ObjectOutputStream writer;
 
@@ -24,12 +25,12 @@ public class Client extends Application {
     public void start(Stage primaryStage) throws Exception{
         FXMLLoader fxmlLoader = new FXMLLoader();
         Parent root = fxmlLoader.load(getClass().getResource("client.fxml").openStream());
-        controller = fxmlLoader.getController();
+        //controller = fxmlLoader.getController();
         primaryStage.setTitle("Customer");
         primaryStage.setScene(new Scene(root, 700, 600));
         primaryStage.show();
-        controller.myClient = this;
-        customer = new Customer("", "");
+        //controller.myClient = this;
+        //customer = new Customer("", "");
 
         connectToServer();
     }
@@ -41,11 +42,13 @@ public class Client extends Application {
             writer = new ObjectOutputStream(sock.getOutputStream());
             reader = new ObjectInputStream(sock.getInputStream());
             System.out.println("networking established");
-            Thread readerThread = new Thread(new IncomingReader()); // see Canvas's Chat for IncomingReader class
-            readerThread.start();
+            //Thread readerThread = new Thread(new IncomingReader()); // see Canvas's Chat for IncomingReader class
+            //readerThread.start();
 
-        } catch (IOException e) {}
+        } catch (IOException e) {
+
+        }
     }
 
-    ClientController getController () { return controller; }
+    //ClientController getController () { return controller; }
 }

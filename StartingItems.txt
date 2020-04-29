@@ -1,0 +1,10 @@
+Basketball
+30
+Car
+5000
+Tickets to Mars
+100000
+Computer
+1000
+Watch
+500

@@ -2,17 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a32647d6-feee-44d4-a560-ed2c52be467e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/StartingItems.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ClientSide/AuctionItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ClientSide/ClientLogin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ClientSide/ClientObserver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ServerSide/AuctionItem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClientSide/ChatClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SceneBuilderClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClientSide/SceneBuilderClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ServerSide/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ClientSide/ChatClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClientSide/AuctionClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ClientSide/SceneBuilderClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClientSide/SceneBuilderClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ServerSide/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ServerSide/Server.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaFXApplication" />
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -29,9 +40,47 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="ServerSide" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Davo\Desktop\Eclipse Workspace\FinalExam_dwd772" />
       <recent name="C:\Users\Davo\Desktop\Eclipse Workspace\FinalExam_dwd772\src" />
     </key>
+  </component>
+  <component name="RunManager" selected="Application.AuctionClient">
+    <configuration name="AuctionClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ClientSide.AuctionClient" />
+      <module name="FinalExam_dwd772" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ClientSide.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ClientLogin" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ClientSide.ClientLogin" />
+      <module name="FinalExam_dwd772" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ClientSide.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.AuctionClient" />
+        <item itemvalue="Application.ClientLogin" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -45,5 +94,47 @@
       <updated>1587941549481</updated>
     </task>
     <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="450" y="186" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1588185239486">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="450" y="186" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.0.1440.860@0.0.1440.860" timestamp="1588185239486" />
+    <state x="885" y="140" key="#com.intellij.ide.util.MemberChooser" timestamp="1588023312447">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="885" y="140" key="#com.intellij.ide.util.MemberChooser/0.0.1440.860@0.0.1440.860" timestamp="1588023312447" />
+    <state width="1397" height="282" key="GridCell.Tab.0.bottom" timestamp="1588185079826">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state width="1397" height="282" key="GridCell.Tab.0.bottom/0.0.1440.860@0.0.1440.860" timestamp="1588185079826" />
+    <state width="1397" height="282" key="GridCell.Tab.0.center" timestamp="1588185079826">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state width="1397" height="282" key="GridCell.Tab.0.center/0.0.1440.860@0.0.1440.860" timestamp="1588185079826" />
+    <state width="1397" height="282" key="GridCell.Tab.0.left" timestamp="1588185079826">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state width="1397" height="282" key="GridCell.Tab.0.left/0.0.1440.860@0.0.1440.860" timestamp="1588185079826" />
+    <state width="1397" height="282" key="GridCell.Tab.0.right" timestamp="1588185079826">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state width="1397" height="282" key="GridCell.Tab.0.right/0.0.1440.860@0.0.1440.860" timestamp="1588185079826" />
+    <state width="1397" height="276" key="GridCell.Tab.1.bottom" timestamp="1588114625380">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state width="1397" height="276" key="GridCell.Tab.1.bottom/0.0.1440.860@0.0.1440.860" timestamp="1588114625380" />
+    <state width="1397" height="276" key="GridCell.Tab.1.center" timestamp="1588114625380">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state width="1397" height="276" key="GridCell.Tab.1.center/0.0.1440.860@0.0.1440.860" timestamp="1588114625380" />
+    <state width="1397" height="276" key="GridCell.Tab.1.left" timestamp="1588114625380">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state width="1397" height="276" key="GridCell.Tab.1.left/0.0.1440.860@0.0.1440.860" timestamp="1588114625380" />
+    <state width="1397" height="276" key="GridCell.Tab.1.right" timestamp="1588114625380">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state width="1397" height="276" key="GridCell.Tab.1.right/0.0.1440.860@0.0.1440.860" timestamp="1588114625380" />
   </component>
 </project>

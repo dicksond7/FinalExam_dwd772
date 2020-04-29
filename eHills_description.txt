@@ -1,0 +1,107 @@
+EE 422C, Software Implementation II
+Vallath Nandakumar
+Spring 2020
+Last modified: April 20, 2020
+
+The final project
+----------------------
+
+This project showcases a server client architecture.  You are expected to use Java Server and Client sockets, multithreading, and OOP concepts.
+
+On the server side is an online auction server that handles customer bidding and selling of several items.  A list of items with their description, minimum acceptable price and auction end times will be read in by your Server from a file or other database as the server starts up. Customers are allowed to search for items in the database with various filters. As customers place bids, the server updates prices and informs all active customes of the new highest bid. The item is marked sold to the highest bidder when the auction closes, and no more bids will be accepted. The server will be capable of handling multiple customers with the help of multiple threads.  You should employ proper synchronization so that multiple people can bid on the same item at the same time with thread safety.
+
+On the client side, a client gets a start-up window where he or she logs in with a user name and, optionally, a password.  He could also be a guest with no password.  He selects an item to bid on and places a bid, which is sent to the server.  An optional feature would be automatic bidding. Credit card payments might be accepted, and should, optionally, be transmitted securely.  Customers should be able to view their bid and purchase history for that login session, and, optionally, for previous sessions.  The server too might have memory to store histories even after reboot.
+
+This is an individual project, and absolutely no collaboration or even discussion is allowed between students and non-instructors outside Piazza.  The answers on Piazza might be less explicit than in other projects, and might be more like hints.
+
+GLHF!
+
+Required: (75% of the grade).
+
+1.
+Server that can handle at least 5 auction items and 5 customers.  Customers and items will have unique names that are single words.
+2.
+The Server need not have a GUI. The console should be used only for debugging output.
+3.
+All communication between the Server and Customer objects should be through Sockets.  A program that will work only if they are on the same machine is not acceptable.  During grading, we might run your software on multiple machines at our end. We realize that such testing may be difficult or impossible for you, so our grading plan will take that into account. 
+4.
+During testing, no Java source file should be shared between the server and customers or between customers.  Make separate projects for the server and for each customer, and duplicate files as necessary across projects.
+5.
+The server initializes items for the auction upon starting up.  You should do this through a file read.
+6.
+The server accepts valid bids.  A valid bid is a bid that is greater than the previous high bid for that item, and on an item whose auction is not closed.  Bid amounts should be doubles.
+7.
+Server informs all customers when a new valid bid is received, so that customers are aware of how much to bid next.  Customers are also aware of whether an item can be bid upon further, or whether the auction for that item is closed.
+8.
+Each customer should have a GUI-based user interface.  You should use GUI techniques to input and output data, and avoid typing.  Only debugging output should go to the console.
+9.
+Customers should be able to place bids, and the program should tell a customer when a bid is invalid. A bid can be invalid if the bid amount is too low, or if the auction for that item is closed.  The reason should be visible to the customer.
+10.
+Every item's auction should have a termination mechanism.  This could be because of time running out, a set price being met, or the server somehow terminating the auction -- pick one of these at least. When the auction is over, a buying customer, if any, should be identified, or the item is marked unsold.  Customers should be able to determine what the high bid at closure was, if any.
+11.
+Provide Quit and/or logout buttons that end the program or parts of the program gracefully.
+12.
+Provide synchronization so that multiple clients bidding at the same time are handled gracefully.
+13.
+Good style, synchronization, OOP practices.  This will be worth 15% of your grade.
+14. 
+You will have to provide documentation for your program.  The documentation should be in two parts -- one from a programmer's point of view, and the other from a user's point of view.  Explain the mode of use and list the features, including the optional extras.  This document could also include a diagram or two.  The last page of the document should be a list of references (links, for example) from where the user has copied code (more than 3 lines) with or without modification.  Do not include the textbook or material discussed or presented in class. The document should be 2-4 pages long. (3%)
+15. 
+Submit your code in two zip files, one for the server and one for the customer.  The Server top class should be called Server, and the Customer top class should be called Client.
+src
+	final_exam (package name)
+		java files, fxml files etc.
+
+If you have other sound files, etc. put them where they appear in your own database on your computer.
+Name the zip file FinalExam_EID.zip.
+
+We might ask you to submit jar files instead of zip files. We should be able to run them and test them without your help.
+16.
+When we grade you, you will be asked to explain your project. Your grade will be influenced by how well you answer the questions.
+
+
+Optional: (25+% of your grade)
+
+1.
+Set a minimum starting price > 0 for every item.
+2.
+Set the duration for the auction for each item separately.
+3.
+Set a high limit that is a 'Buy It Now' price.  When a customer bids that amount, he/she gets it right away.
+4.
+Every customer can see the bid history of every item, including, perhaps, who made the bid.  If the item has been sold, every customer should be able to see the buyer and the selling price.
+5.
+Items could have descriptions that are visible to customers. Could include images.
+6.
+A search feature to search through items, customers, etc.
+7.
+Non-volatile history of auctions, customer activity etc.
+8.
+Sound effects, nice GUI.
+9.
+Count-down clocks for items.
+10.
+Using the Observable class and Observer interface.
+11. 
+Use a cloud server to host the auction Server.
+12.
+Cryptography techniques -- encryption of passwords, password hashing and salting, encryption of messages.
+13. 
+Use Java SQL database.
+14. 
+Other ideas?  Think of eBay, perhaps.
+
+
+
+General Hints:
+
+Start early, and test often.
+Use Git to safely store your code.
+Don't get overly ambitious.  Do the minimum first and make your GUI simple, unless you have time to fix bugs in more complex code or go back to a simple GUI if bugs are stubborn.
+Scenebuilder has a steep learning curve, and unless you used it for project 5, consider not using it here.
+
+Starting code:
+See Canvas.
+
+Changes:
+This document is subject to change.  Watch Piazza for changes, which, I hope, will be minimal.
