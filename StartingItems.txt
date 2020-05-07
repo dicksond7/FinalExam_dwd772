@@ -1,10 +1,15 @@
 Basketball
 30
+100
 Car
 5000
+20000
 Tickets to Mars
 100000
+1000000
 Computer
 1000
+2000
 Watch
 500
+1200
