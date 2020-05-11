@@ -1,35 +1,37 @@
 package final_exam;
 
 import java.io.Serializable;
-import java.time.*;
 
 public class AuctionItem implements Serializable {
     private String name;
-    private int bid;
-    private int price;
+    private double bid;
+    private double price;
     private boolean isSold;
     private int pagePosition; // position on each clients grid map
-    private LocalTime timeRemaining;
-    private final LocalTime startTime;
-    private final int buyNowPrice;
+    private final double buyNowPrice;
+    private String buyer;
+    private String recentHistory;
 
-    AuctionItem(String name, int startingPrice, int pagePosition, int buyNowPrice){
-        this.timeRemaining = LocalTime.of(10, 0);
-        this.startTime = LocalTime.now();
+
+    AuctionItem(String name, double startingPrice, int pagePosition, double buyNowPrice){
         this.name = name;
         this.price = startingPrice;
         this.pagePosition = pagePosition;
         this.isSold = false;
         this.buyNowPrice = buyNowPrice;
         this.bid = 0;
+        this.recentHistory = name + " auction started.";
+
     }
 
-    public void setPrice(int bid){
+
+    public void setPrice(double bid, String buyer){
         this.price = bid;
-        this.bid = 0;
+        this.buyer = buyer;
+        //this.bid = 0;
     }
 
-    public int getPrice(){
+    public double getPrice(){
         return price;
     }
 
@@ -45,12 +47,12 @@ public class AuctionItem implements Serializable {
         return this.name;
     }
 
-    public void setBid(int bid){
+    public void setBid(double bid){
         this.bid = bid;
     }
 
-    public int getBid(){
-        return bid;
+    public double getBid(){
+        return this.bid;
     }
 
     public void setPagePosition(int position){
@@ -60,11 +62,19 @@ public class AuctionItem implements Serializable {
         return this.pagePosition;
     }
 
-    public LocalTime getTimeRemaining(){
-        return timeRemaining;
-    }
-    public int getBuyNowPrice(){
+    public double getBuyNowPrice(){
         return buyNowPrice;
+    }
+
+    public String getBuyer(){
+        return buyer;
+    }
+
+    public void setHistory(String history){
+        this.recentHistory = history;
+    }
+    public String getRecentHistory(){
+        return recentHistory;
     }
 
 }

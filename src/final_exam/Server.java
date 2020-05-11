@@ -7,6 +7,7 @@ import java.io.ObjectInputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.*;
+import javafx.scene.text.Text;
 
 
 /*
@@ -52,7 +53,7 @@ public class Server extends Observable {
                     Thread t = new Thread(new ClientHandler(clientSocket, writer));
                     t.start();
                     addObserver(writer);
-                    System.out.println("Got a connection");
+                    //System.out.println("Got a connection");
                 }
             } catch (IOException e) {
                 e.printStackTrace();
@@ -65,6 +66,7 @@ public class Server extends Observable {
         private ObjectInputStream reader;
         private  ClientObserver writer; //Extends ObjectOutputStream, implements Observer
         Socket clientSocket;
+        private String username;
 
         public ClientHandler(Socket clientSocket, ClientObserver writer) throws IOException{
             this.writer = writer;
@@ -79,6 +81,7 @@ public class Server extends Observable {
                 }
                 String username = (String) reader.readObject();
                 usernames.add(username);
+                this.username = username;
                 System.out.println(username);
 
             }catch(ClassNotFoundException e){
@@ -89,16 +92,19 @@ public class Server extends Observable {
 
         public void run() {
 
-            AuctionItem itemUpdate;
+            //AuctionItem itemUpdate;
             try{
                 while(true) {
+                    AuctionItem itemUpdate = (AuctionItem) reader.readObject();
+                    //System.out.println("Auction item received: " + itemUpdate.getName());
+                    //System.out.println("Bid: " + itemUpdate.getBid());
                     synchronized (auctionItems) {
-                        itemUpdate = (AuctionItem) reader.readObject();
+                        updateItem(itemUpdate, username);
                         auctionItems.replace(itemUpdate.getName(), itemUpdate);
-                        updateItem(auctionItems.get(itemUpdate.getName()));
-                        System.out.println("Auction item received: " + itemUpdate.getName());
+                        itemList.set(itemUpdate.getPagePosition() - 1, itemUpdate);
+
                         setChanged();
-                        writer.update(server, itemUpdate);
+                        notifyObservers(itemUpdate);
                     }
                 }
             }catch(IOException | ClassNotFoundException e){
@@ -133,15 +139,20 @@ public class Server extends Observable {
         }
     }
 
-    private static void updateItem(AuctionItem item){
+    private static void updateItem(AuctionItem item, String username){
         if(item.getBid() >= item.getBuyNowPrice()){
+            item.setPrice(item.getBid(), username);
+            item.setHistory(item.getName() + " bought by " + item.getBuyer() + " for $" + item.getPrice());
             item.sold();
+        }else {
+            if(item.getBid() >= item.getPrice()) {
+                item.setPrice(item.getBid(), username);
+                item.setHistory(item.getName() + " bid on by " + item.getBuyer() + " for $" + item.getPrice());
+            }else{
+                item.setHistory(item.getName() + " out bid by " + item.getBuyer() + " for $" + item.getPrice());
+            }
         }
-        item.setPrice(item.getBid());
     }
 
 
-    private static void updateAuctionItems(ClientObserver writer){
-
-    }
 }

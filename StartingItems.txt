@@ -4,7 +4,7 @@ Basketball
 Car
 5000
 20000
-Tickets to Mars
+Tickets
 100000
 1000000
 Computer
